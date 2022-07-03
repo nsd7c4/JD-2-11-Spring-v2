@@ -2,11 +2,12 @@ package com.grr.jd211springv2.data;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
 public class Cart {
-    private HashMap<Integer, Integer> items = new HashMap<>();
+    private final Map<Integer, Integer> items = new HashMap<>();
 
     private final Map<Integer, String> itemCodes = Map.of(
             0, "Bread",
@@ -16,7 +17,7 @@ public class Cart {
             4, "Beef"
     );
 
-    public void addItems(ArrayList<Integer> id) {
+    public void addItems(List<Integer> id) {
         id.forEach((n) -> items.merge(n, 1, Integer::sum));
     }
 

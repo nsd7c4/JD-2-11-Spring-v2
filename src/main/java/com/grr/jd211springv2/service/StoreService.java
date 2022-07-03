@@ -1,20 +1,19 @@
 package com.grr.jd211springv2.service;
 
 import com.grr.jd211springv2.data.Cart;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.SessionScope;
 
-import java.util.ArrayList;
-import java.util.Map;
+import java.util.List;
 
-@Service
+@Component
 @SessionScope
 public class StoreService{
 
-    private Cart cart = new Cart();
+    private final Cart cart = new Cart();
 
 
-    public String addItem(ArrayList<Integer> id){
+    public String addItem(List<Integer> id){
         cart.addItems(id);
         return id.toString();
     }
